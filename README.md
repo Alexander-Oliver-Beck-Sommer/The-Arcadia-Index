@@ -14,13 +14,15 @@ As mentioned, this repository is dedicated to an online application that provide
 **Languages:** JavaScript/TypeScript, React, CSS/SCSS, HTML.
 
 ## 🔗 External Libraries
-🍃 **https://leafletjs.com/**
+🍃 **[https://react-leaflet.js.org](https://react-leaflet.js.org/)**
 
 🖼️ **https://react-icons.github.io/react-icons/**
 
 🔄️ **https://www.npmjs.com/package/npm-check-updates**
 
 🏃‍♂️ **https://www.npmjs.com/package/framer-motion**
+
+📕 **[https://www.npmjs.com/package/framer-motion](https://storybook.js.org/)**
 ## Comments
 
 This project is **work in progress**. More information and details will be shared as time goes.
