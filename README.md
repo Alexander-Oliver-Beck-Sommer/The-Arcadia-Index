@@ -13,9 +13,6 @@ As mentioned, this repository is dedicated to an online application that provide
 
 **Languages:** JavaScript/TypeScript, React, CSS/SCSS, HTML.
 
-**Libraries:**
-
-
 ## 🔗 External Libraries
 🍃 **https://leafletjs.com/**
 
@@ -24,3 +21,6 @@ As mentioned, this repository is dedicated to an online application that provide
 🔄️ **https://www.npmjs.com/package/npm-check-updates**
 
 🏃‍♂️ **https://www.npmjs.com/package/framer-motion**
+## Comments
+
+This project is **work in progress**. More information and details will be shared as time goes.
