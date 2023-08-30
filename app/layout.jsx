@@ -1,7 +1,7 @@
 import "@/styles/globals.scss";
 
 export const metadata = {
-  title: 'The Hunter Wilhelm INDEX',
+  title: 'The Hunter Wilhelm Index',
   description: 'Explore and discover the world of Hunter Wilhelm.',
 }
 
