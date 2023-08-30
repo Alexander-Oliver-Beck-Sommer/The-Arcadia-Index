@@ -1,0 +1,25 @@
+@import "../../styles/variables/index";
+
+.header_container {
+    min-height: rem(80px);
+    padding: rem(7px) rem(15px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px $gold;
+    &__content_holder {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: rem(20px);
+        &__logo_block {
+            border: solid 1px black;
+        }
+        &__hamburger_block {
+            border: solid 1px $gold;
+            width: rem(50px);
+            height: rem(50px);
+        }
+    }
+}
