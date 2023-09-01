@@ -1,0 +1,82 @@
+@import "../../styles/variables/index";
+
+$header-height: rem(80px);
+
+.header_container {
+    min-height: $header-height;
+    padding: rem(7px) rem(15px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid rem(2px) $gold;
+    &__content_holder {
+        max-width: $breakpoint-xl;
+        color: $white;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: rem(20px);
+        &__hamburger_block {
+            > div:first-of-type {
+                transition: $tran-400;
+                outline: solid rem(2px) transparent;
+                &:focus-visible {
+                    outline-color: $gold;
+                }
+            }
+        }
+    }
+}
+
+.overlay_open,
+.overlay_closed {
+    position: fixed;
+    top: $header-height;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+    transition: $tran-400;
+}
+
+.overlay_open {
+    background-color: rgba(0, 0, 0, 0.800);
+    visibility: visible;
+    opacity: 100%;
+}
+
+.overlay_closed {
+    background-color: transparent;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.nav_open,
+.nav_closed {
+    z-index: 10;
+    background-color: $black;
+    border-width: rem(2px);
+    border-style: solid;
+    width: 100%;
+    transition: $tran-400;
+    position: absolute;
+    top: $header-height;
+    bottom: 0;
+    left: 0;
+}
+
+.nav_closed {
+    max-width: 0%;
+    opacity: 0;
+    border-color: transparent;
+}
+
+.nav_open {
+    opacity: 100%;
+    max-width: 80%;
+    border-color: $gold;
+    @include desktop {
+        max-width: rem(300px);
+    }
+}
