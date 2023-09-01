@@ -20,12 +20,23 @@ button {
   padding: 0;
   margin: 0;
   cursor: pointer;
+  transition: $tran-400;
+  outline: solid rem(2px) transparent;
+  &:focus-visible {
+    outline-color: $gold;
+  }
 }
 
 a {
   text-decoration: none;
   color: inherit;
   display: inline-block;
+  transition: $tran-400;
+  outline: solid rem(2px) transparent;
+  outline-offset: rem(5px);
+  &:focus-visible {
+    outline-color: $gold;
+  }
 }
 
 img {
