@@ -18,13 +18,15 @@ As mentioned, this repository is dedicated to an online application that provide
 
 ## 🔗 External Libraries
 
-🍃 **https://leafletjs.com/**
+🍃 **[React Leaflet](https://react-leaflet.js.org/)**
 
-🖼️ **https://react-icons.github.io/react-icons/**
+🖼️ **[React Icons](https://react-icons.github.io/react-icons/)**
 
-🔄️ **https://www.npmjs.com/package/npm-check-updates**
+🔄️ **[npm-check-updates](https://www.npmjs.com/package/npm-check-updates)**
 
-🏃‍♂️ **https://www.npmjs.com/package/framer-motion**
+🏃‍♂️ **[Framer Motion](https://www.framer.com/motion/)**
+
+📕 **[Storybook](https://storybook.js.org/)**
 
 ## Comments
 
