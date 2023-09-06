@@ -3,8 +3,8 @@ import "@/styles/globals.scss";
 import Head from "next/head";
 
 export const metadata = {
-  title: "The Hunter Wilhelm Index",
-  description: "Explore and discover the world of Hunter Wilhelm.",
+  title: "The Arcadia Index",
+  description: "Explore and discover the world of Arcadia - The Golden Trilogy.",
 };
 
 export default function RootLayout({ children }) {
