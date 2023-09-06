@@ -8,9 +8,7 @@ const WideContent = ({ children, landmark }) => {
 
   return (
     <section className={styles.wide_content_component} aria-label={landmark}>
-      <div className={styles.wide_content_component__content_holder}>
         {children}
-      </div>
     </section>
   );
 };
