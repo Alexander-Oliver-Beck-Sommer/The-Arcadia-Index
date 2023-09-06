@@ -4,20 +4,47 @@ $header-height: rem(80px);
 
 .header_container {
     min-height: $header-height;
-    padding: rem(7px) rem(15px);
+    padding: rem(7px) rem(25px);
     display: flex;
     justify-content: center;
     align-items: center;
-    border: solid rem(2px) $gold;
+    border-bottom: solid rem(2px) $gold;
+    position: relative;
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        background: rgb(34, 34, 34);
+        background: linear-gradient(
+            180deg,
+            rgba(34, 34, 34, 1) 0%,
+            rgba(72, 60, 43, 1) 32%,
+            rgba(113, 88, 53, 1) 63%,
+            rgba(136, 127, 113, 1) 100%
+        );
+        opacity: 20%;
+        inset: 0;
+        z-index: 15;
+    }
     &__content_holder {
-        max-width: $breakpoint-xl;
+        position: relative;
+        z-index: 20;
         color: $white;
+        max-width: $breakpoint-xl;
         width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
         gap: rem(20px);
+        &__logo_block {
+            display: flex;
+            max-width: rem(150px);
+            @include tablet {
+                max-width: rem(200px);
+            }
+        }
         &__hamburger_block {
+            color: $gold;
             > div:first-of-type {
                 transition: $tran-400;
                 outline: solid rem(2px) transparent;
@@ -25,7 +52,48 @@ $header-height: rem(80px);
                     outline-color: $gold;
                 }
             }
+            @include xl {
+                display: none;
+            }
         }
+        &__xl_nav {
+            display: none;
+            font-size: $font-32;
+            color: $gold;
+            & ul {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                a {
+                    overflow: hidden;
+                    outline-offset: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: $header-height;
+                    height: $header-height;
+                    position: relative;
+                }
+
+                & .active_link {
+                    &::before {
+                        content: "▲";
+                        font-size: $font-24;
+                        line-height: $font-10;
+                        position: absolute;
+                        bottom: 0;
+                        left: 50%;
+                        transform: translateX(-50%);
+                    }
+                }
+            }
+            @include xl {
+                display: block;
+            }
+        }
+    }
+    @include xl {
+        padding: 0 rem(25px);
     }
 }
 
@@ -41,9 +109,12 @@ $header-height: rem(80px);
 }
 
 .overlay_open {
-    background-color: rgba(0, 0, 0, 0.800);
+    background-color: rgba(0, 0, 0, 0.8);
     visibility: visible;
     opacity: 100%;
+    @include xl {
+        display: none;
+    }
 }
 
 .overlay_closed {
@@ -54,16 +125,62 @@ $header-height: rem(80px);
 
 .nav_open,
 .nav_closed {
+    overflow: hidden;
     z-index: 10;
     background-color: $black;
     border-width: rem(2px);
     border-style: solid;
+    border-top: none;
+    border-left: none;
+    border-bottom: none;
     width: 100%;
     transition: $tran-400;
     position: absolute;
     top: $header-height;
     bottom: 0;
     left: 0;
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        background: rgb(34, 34, 34);
+        background: linear-gradient(
+            180deg,
+            rgba(34, 34, 34, 1) 0%,
+            rgba(72, 60, 43, 1) 32%,
+            rgba(113, 88, 53, 1) 63%,
+            rgba(136, 127, 113, 1) 100%
+        );
+        opacity: 20%;
+        inset: 0;
+        z-index: 15;
+    }
+    & .content_holder {
+        position: relative;
+        z-index: 20;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        & a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            outline: none;
+            outline-offset: 0;
+            color: $gold;
+            width: 100%;
+            padding: rem(20px) rem(25px);
+            border-bottom: solid rem(2px) $gold;
+        }
+        .active_link {
+            background-color: $gold;
+            color: $black;
+        }
+    }
+    @include xl {
+        display: none;
+    }
 }
 
 .nav_closed {
