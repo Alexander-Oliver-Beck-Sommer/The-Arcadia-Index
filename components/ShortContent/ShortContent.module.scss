@@ -1,0 +1,17 @@
+@import "../../styles/variables/index";
+
+.short_content_component {
+    width: 100%;
+    padding: rem(50px) rem(15px) rem(75px);
+    border: solid 1px red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include xl {
+        padding: rem(50px) rem(25px) rem(50px);
+    }
+    &__content_holder {
+        width: 100%;
+        max-width: $breakpoint-xl;
+    }
+}

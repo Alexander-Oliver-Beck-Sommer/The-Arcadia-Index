@@ -1,0 +1,53 @@
+@import "../styles/variables/index";
+
+.home_banner_container {
+    max-width: $breakpoint-xl;
+    min-height: 100svh;
+    width: 100%;
+    margin-top: -$header-height;
+    padding-top: $header-height;
+    background-color: $black;
+    display: flex;
+    align-items: stretch;
+    &__content {
+        padding: rem(50px) rem(15px);
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include tablet {
+            padding: 0;
+            display: block;
+        }
+        &__text_box {
+            display: flex;
+            flex-direction: column;
+            &__sub {
+                font-weight: 300;
+                text-transform: uppercase;
+            }
+            &__title {
+                border-bottom: solid rem(3px);
+                margin-bottom: rem(16px);
+                padding-bottom: rem(10px);
+            }
+            &__paragraphs {
+                display: flex;
+                flex-direction: column;
+                gap: rem(16px);
+                & a {
+                    font-weight: 700;
+                    border-bottom: solid rem(2px) $gold;
+                }
+            }
+        }
+    }
+    @include tablet {
+        min-height: auto;
+        padding: rem(50px) rem(15px);
+        margin: 0;
+    }
+    @include xl {
+        padding: rem(75px) rem(15px) rem(50px);
+    }
+}

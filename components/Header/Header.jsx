@@ -44,6 +44,7 @@ const Header = () => {
             href="/"
             aria-label="Return home"
             className={styles.header_container__content_holder__logo_block}
+            onClick={() => NavigationMenu(false)}
           >
             <Image
               src={ArcadiaLogo}
