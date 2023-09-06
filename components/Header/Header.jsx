@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import styles from "./Header.module.scss";
 import Link from "next/link";
 import Hamburger from "hamburger-react";
+import ArcadiaLogo from "@/public/images/logo/arcadia-logo-gold.png";
+import Image from "next/image";
 
 const Header = () => {
   const [isToggled, setIsToggled] = useState(false);
@@ -32,7 +34,10 @@ const Header = () => {
             aria-label="Return home"
             className={styles.header_container__content_holder__logo_block}
           >
-            <h3>The Hunter Wilhelm Index</h3>
+            <Image
+              src={ArcadiaLogo}
+              alt="Arcadia - Tale of the Cosmic Message"
+            />
           </Link>
           <div
             className={styles.header_container__content_holder__hamburger_block}
@@ -41,7 +46,7 @@ const Header = () => {
               direction="right"
               label="Show and hide menu"
               hideOutline={false}
-              toggled={isToggled} // Control its state
+              toggled={isToggled}
               onToggle={(toggled) => NavigationMenu(toggled)}
             />
           </div>
@@ -52,7 +57,20 @@ const Header = () => {
         onClick={() => NavigationMenu(false)}
         className={styles.overlay_closed}
       ></div>
-      <nav id="nav-container" className={styles.nav_closed}></nav>
+      <nav id="nav-container" className={styles.nav_closed}>
+        <ul className={styles.content_holder}>
+          <li>
+            <Link href="/" alt="Return home">
+              <h3>Home</h3>
+            </Link>
+          </li>
+          <li>
+            <Link href="/" alt="Return home">
+              <h3>Home</h3>
+            </Link>
+          </li>
+        </ul>
+      </nav>
     </>
   );
 };
