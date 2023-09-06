@@ -4,7 +4,7 @@ $header-height: rem(80px);
 
 .header_container {
     min-height: $header-height;
-    padding: rem(7px) rem(25px);
+    padding: rem(7px) rem(15px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -125,7 +125,8 @@ $header-height: rem(80px);
 
 .nav_open,
 .nav_closed {
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
     z-index: 10;
     background-color: $black;
     border-width: rem(2px);
@@ -170,7 +171,7 @@ $header-height: rem(80px);
             outline-offset: 0;
             color: $gold;
             width: 100%;
-            padding: rem(20px) rem(25px);
+            padding: rem(20px) rem(15px);
             border-bottom: solid rem(2px) $gold;
         }
         .active_link {
