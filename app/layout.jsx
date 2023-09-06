@@ -1,6 +1,5 @@
 import Header from "@/components/Header/Header";
 import "@/styles/globals.scss";
-import Head from "next/head";
 
 export const metadata = {
   title: "The Arcadia Index",
