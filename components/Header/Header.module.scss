@@ -8,7 +8,7 @@ $header-height: rem(80px);
     display: flex;
     justify-content: center;
     align-items: center;
-    border: solid rem(2px) $gold;
+    border-bottom: solid rem(2px) $gold;
     position: relative;
     &::before {
         content: "";
@@ -29,8 +29,8 @@ $header-height: rem(80px);
     &__content_holder {
         position: relative;
         z-index: 20;
-        max-width: $breakpoint-xl;
         color: $white;
+        max-width: $breakpoint-xl;
         width: 100%;
         display: flex;
         justify-content: space-between;
@@ -39,6 +39,9 @@ $header-height: rem(80px);
         &__logo_block {
             display: flex;
             max-width: rem(150px);
+            @include tablet {
+                max-width: rem(200px);
+            }
         }
         &__hamburger_block {
             color: $gold;
@@ -49,7 +52,48 @@ $header-height: rem(80px);
                     outline-color: $gold;
                 }
             }
+            @include xl {
+                display: none;
+            }
         }
+        &__xl_nav {
+            display: none;
+            font-size: $font-32;
+            color: $gold;
+            & ul {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                a {
+                    overflow: hidden;
+                    outline-offset: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: $header-height;
+                    height: $header-height;
+                    position: relative;
+                }
+
+                & .active_link {
+                    &::before {
+                        content: "▲";
+                        font-size: $font-24;
+                        line-height: $font-10;
+                        position: absolute;
+                        bottom: 0;
+                        left: 50%;
+                        transform: translateX(-50%);
+                    }
+                }
+            }
+            @include xl {
+                display: block;
+            }
+        }
+    }
+    @include xl {
+        padding: 0 rem(25px);
     }
 }
 
@@ -68,6 +112,9 @@ $header-height: rem(80px);
     background-color: rgba(0, 0, 0, 0.8);
     visibility: visible;
     opacity: 100%;
+    @include xl {
+        display: none;
+    }
 }
 
 .overlay_closed {
@@ -78,11 +125,14 @@ $header-height: rem(80px);
 
 .nav_open,
 .nav_closed {
+    overflow: hidden;
     z-index: 10;
     background-color: $black;
     border-width: rem(2px);
     border-style: solid;
     border-top: none;
+    border-left: none;
+    border-bottom: none;
     width: 100%;
     transition: $tran-400;
     position: absolute;
@@ -113,6 +163,9 @@ $header-height: rem(80px);
         flex-direction: column;
         align-items: stretch;
         & a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             outline: none;
             outline-offset: 0;
             color: $gold;
@@ -120,6 +173,13 @@ $header-height: rem(80px);
             padding: rem(20px) rem(25px);
             border-bottom: solid rem(2px) $gold;
         }
+        .active_link {
+            background-color: $gold;
+            color: $black;
+        }
+    }
+    @include xl {
+        display: none;
     }
 }
 
