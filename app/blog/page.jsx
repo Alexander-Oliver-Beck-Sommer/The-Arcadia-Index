@@ -1,9 +1,9 @@
 import React from "react";
+import meda from "@/data/header.json";
 
 export const metadata = {
-  title: "Blogs | The Arcadia Index",
-  description:
-    "Be updated with the newest updates with Arcadia - including website changes, chapter & book releases, and much more.",
+  title: meda.pages.blog.title,
+  description: meda.pages.blog.title,
 };
 
 const Blog = () => {

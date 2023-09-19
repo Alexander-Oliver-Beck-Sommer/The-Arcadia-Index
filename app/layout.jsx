@@ -1,9 +1,10 @@
 import Header from "@/components/Header/Header";
 import "@/styles/globals.scss";
+import meda from "@/data/header.json";
 
 export const metadata = {
-  title: "The Arcadia Index",
-  description: "Explore and discover the world of Arcadia - The Golden Trilogy.",
+  title: meda.pages.home.title,
+  description: meda.pages.home.desc,
 };
 
 export default function RootLayout({ children }) {

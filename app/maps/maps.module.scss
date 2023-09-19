@@ -1,0 +1,50 @@
+@import "../../styles/variables/index";
+
+.map_selector_container {
+    padding: $header-height rem(15px) 0;
+    @include xl {
+        padding: $header-height rem(25px) 0;
+    }
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    height: 100svh;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    &__positioner {
+        max-width: $breakpoint-xl;
+        width: 100%;
+        padding: rem(25px) 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto repeat(3, 1fr);
+        gap: rem(25px);
+        &__map_text_box {
+            text-align: center;
+            padding-bottom: rem(15px);
+            border-bottom: solid rem(2px) $gold;
+        }
+        &__map_select_box {
+            overflow: hidden;
+            border: solid rem(2px) $gold;
+            width: 100%;
+            position: relative;
+            &:hover,
+            &:focus-visible {
+                & img {
+                    transform: scale(1.1);
+                    filter: grayscale(0%);
+                }
+            }
+            & img {
+                transition: $tran-400;
+                position: absolute;
+                inset: 0;
+                height: 100%;
+                z-index: 1;
+                filter: grayscale(100%);
+            }
+        }
+    }
+}

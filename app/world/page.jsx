@@ -1,14 +1,13 @@
-import React from 'react'
+import React from "react";
+import meda from "@/data/header.json";
 
 export const metadata = {
-  title: "World | The Arcadia Index",
-  description: "Browse and read the world of Arcadia, including races, magic, monsters, history, and so on.",
+  title: meda.pages.world.title,
+  description: meda.pages.world.title,
 };
 
 const World = () => {
-  return (
-    <div>World</div>
-  )
-}
+  return <div>World</div>;
+};
 
-export default World
+export default World;

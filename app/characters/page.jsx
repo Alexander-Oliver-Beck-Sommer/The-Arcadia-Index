@@ -1,14 +1,13 @@
-import React from 'react'
+import React from "react";
+import meda from "@/data/header.json";
 
 export const metadata = {
-  title: "Characters | The Arcadia Index",
-  description: "Read and learn about the characters in the universe of Arcadia.",
+  title: meda.pages.characters.title,
+  description: meda.pages.characters.title,
 };
 
 const Characters = () => {
-  return (
-    <div>Characters</div>
-  )
-}
+  return <div>Characters</div>;
+};
 
-export default Characters
+export default Characters;

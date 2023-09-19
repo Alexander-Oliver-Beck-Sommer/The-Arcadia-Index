@@ -1,14 +1,13 @@
-import React from 'react'
+import React from "react";
+import meda from "@/data/header.json";
 
 export const metadata = {
-  title: "Factions | The Arcadia Index",
-  description: "Read and learn about the factions and guilds in the universe of Arcadia.",
+  title: meda.pages.factions.title,
+  description: meda.pages.factions.title,
 };
 
 const Factions = () => {
-  return (
-    <div>Factions</div>
-  )
-}
+  return <div>Factions</div>;
+};
 
-export default Factions
+export default Factions;

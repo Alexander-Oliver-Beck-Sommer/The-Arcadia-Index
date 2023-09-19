@@ -54,6 +54,10 @@
       "name": "Blog",
       "aria": "Continue to Blog",
       "path": "/blog"
+    },
+    "error": {
+      "title": "Wrongful Path",
+      "desc": "You aren't supposed to be here... How did you get back here?"
     }
   }
 }
