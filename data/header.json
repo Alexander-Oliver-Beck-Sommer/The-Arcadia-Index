@@ -1,0 +1,59 @@
+{
+  "logo": {
+    "alt": "Arcadia"
+  },
+  "hamburger": {
+    "label": "Show and hide menu"
+  },
+  "pages": {
+    "home": {
+      "title": "The Arcadia Index",
+      "desc": "Explore and discover the world of Arcadia.",
+      "name": "Home",
+      "aria": "Return home",
+      "path": "/"
+    },
+    "maps": {
+      "title": "Maps | The Arcadia Index",
+      "desc": "Navigate and discover the three pillars of reality - The Cosmic Kingdom, Plains of Arcadia & The Seven Circles of Claymore.",
+      "name": "Maps",
+      "aria": "Continue to Maps",
+      "path": "/maps"
+    },
+    "world": {
+      "title": "World | The Arcadia Index",
+      "desc": "Browse and read the world of Arcadia, including races, magic, monsters, history, and so on.",
+      "name": "World",
+      "aria": "Continue to World",
+      "path": "/world"
+    },
+    "factions": {
+      "title": "Factions | The Arcadia Index",
+      "desc": "Read and learn about the factions and guilds in the universe of Arcadia.",
+      "name": "Factions",
+      "aria": "Continue to Factions",
+      "path": "/factions"
+    },
+    "characters": {
+      "title": "Characters | The Arcadia Index",
+      "desc": "Read and learn about the characters in the universe of Arcadia.",
+      "name": "Characters",
+      "aria": "Continue to Characters",
+      "path": "/characters"
+    },
+    "books": {
+      "title": "Books | The Arcadia Index",
+      "desc": "Select and choose the entry you wish to read of the Arcadia Trilogy.",
+      "name": "Books",
+      "aria": "Continue to Books",
+      "path": "/books"
+    },
+    "blog": {
+      "title": "Blog | The Arcadia Index",
+      "desc": "Be updated with the newest updates with Arcadia - including website changes, chapter & book releases, and much more.",
+      "name": "Blog",
+      "aria": "Continue to Blog",
+      "path": "/blog"
+    }
+  }
+}

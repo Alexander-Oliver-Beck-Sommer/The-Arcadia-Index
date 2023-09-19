@@ -5,6 +5,7 @@ import Link from "next/link";
 import Hamburger from "hamburger-react";
 import ArcadiaLogo from "@/public/images/logo/arcadia-logo-gold.png";
 import Image from "next/image";
+import data from "@/data/header.json";
 import {
   GiCampingTent,
   GiTreasureMap,
@@ -36,27 +37,34 @@ const Header = () => {
     NavigationMenu(false);
   }, []);
 
+  const pages = [
+    { icon: GiCampingTent, ...data.pages.home },
+    { icon: GiTreasureMap, ...data.pages.maps },
+    { icon: GiWorld, ...data.pages.world },
+    { icon: GiFlyingFlag, ...data.pages.factions },
+    { icon: GiDramaMasks, ...data.pages.characters },
+    { icon: GiBookmarklet, ...data.pages.books },
+    { icon: GiNewspaper, ...data.pages.blog },
+  ];
+
   return (
     <>
       <header className={styles.header_container}>
         <section className={styles.header_container__content_holder}>
           <Link
-            href="/"
-            aria-label="Return home"
+            href={data.pages.home.path}
+            aria-label={data.pages.home.aria}
             className={styles.header_container__content_holder__logo_block}
             onClick={() => NavigationMenu(false)}
           >
-            <Image
-              src={ArcadiaLogo}
-              alt="Arcadia - Tale of the Cosmic Message"
-            />
+            <Image priority src={ArcadiaLogo} alt={data.logo.alt} />
           </Link>
           <div
             className={styles.header_container__content_holder__hamburger_block}
           >
             <Hamburger
               direction="right"
-              label="Show and hide menu"
+              label={data.hamburger.label}
               hideOutline={false}
               toggled={isToggled}
               onToggle={(toggled) => NavigationMenu(toggled)}
@@ -64,77 +72,17 @@ const Header = () => {
           </div>
           <nav className={styles.header_container__content_holder__xl_nav}>
             <ul>
-              <li>
-                <Link
-                  href="/"
-                  alt="Return home"
-                  className={currentRoute === "/" ? styles.active_link : ""}
-                >
-                  <GiCampingTent />
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/maps"
-                  alt="Continue to Maps"
-                  className={currentRoute === "/maps" ? styles.active_link : ""}
-                >
-                  <GiTreasureMap />
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/world"
-                  alt="Continue to World"
-                  className={
-                    currentRoute === "/world" ? styles.active_link : ""
-                  }
-                >
-                  <GiWorld />
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/factions"
-                  alt="Continue to Factions"
-                  className={
-                    currentRoute === "/factions" ? styles.active_link : ""
-                  }
-                >
-                  <GiFlyingFlag />
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/characters"
-                  alt="Continue to Characters"
-                  className={
-                    currentRoute === "/characters" ? styles.active_link : ""
-                  }
-                >
-                  <GiDramaMasks />
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/books"
-                  alt="Continue to Books"
-                  className={
-                    currentRoute === "/books" ? styles.active_link : ""
-                  }
-                >
-                  <GiBookmarklet />
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/blog"
-                  alt="Continue to Blog"
-                  className={currentRoute === "/blog" ? styles.active_link : ""}
-                >
-                  <GiNewspaper />
-                </Link>
-              </li>
+              {pages.map(({ path, aria, icon: Icon }, index) => (
+                <li key={index}>
+                  <Link
+                    href={path}
+                    aria-label={aria}
+                    className={currentRoute === path ? styles.active_link : ""}
+                  >
+                    <Icon />
+                  </Link>
+                </li>
+              ))}
             </ul>
           </nav>
         </section>
@@ -146,85 +94,19 @@ const Header = () => {
       ></div>
       <nav id="nav-container" className={styles.nav_closed}>
         <ul className={styles.content_holder}>
-          <li>
-            <Link
-              href="/"
-              alt="Return home"
-              className={currentRoute === "/" ? styles.active_link : ""}
-              onClick={() => NavigationMenu(false)}
-            >
-              <h3>Home</h3>
-              <GiCampingTent size={26} />
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/maps"
-              alt="Continue to Maps"
-              className={currentRoute === "/maps" ? styles.active_link : ""}
-              onClick={() => NavigationMenu(false)}
-            >
-              <h3>Maps</h3>
-              <GiTreasureMap size={26} />
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/world"
-              alt="Continue to World"
-              className={currentRoute === "/world" ? styles.active_link : ""}
-              onClick={() => NavigationMenu(false)}
-            >
-              <h3>World</h3>
-              <GiWorld size={26} />
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/factions"
-              alt="Continue to Factions"
-              className={currentRoute === "/factions" ? styles.active_link : ""}
-              onClick={() => NavigationMenu(false)}
-            >
-              <h3>Factions</h3>
-              <GiFlyingFlag size={26} />
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/characters"
-              alt="Continue to Characters"
-              className={
-                currentRoute === "/characters" ? styles.active_link : ""
-              }
-              onClick={() => NavigationMenu(false)}
-            >
-              <h3>Characters</h3>
-              <GiDramaMasks size={26} />
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/books"
-              alt="Continue to Books"
-              className={currentRoute === "/books" ? styles.active_link : ""}
-              onClick={() => NavigationMenu(false)}
-            >
-              <h3>Books</h3>
-              <GiBookmarklet size={26} />
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/blog"
-              alt="Continue to Blog"
-              className={currentRoute === "/blog" ? styles.active_link : ""}
-              onClick={() => NavigationMenu(false)}
-            >
-              <h3>Blog</h3>
-              <GiNewspaper size={26} />
-            </Link>
-          </li>
+          {pages.map(({ path, aria, name, icon: Icon }, index) => (
+            <li key={index}>
+              <Link
+                href={path}
+                aria-label={aria}
+                className={currentRoute === path ? styles.active_link : ""}
+                onClick={() => NavigationMenu(false)}
+              >
+                <h3>{name}</h3>
+                <Icon size={26} />
+              </Link>
+            </li>
+          ))}
         </ul>
       </nav>
     </>

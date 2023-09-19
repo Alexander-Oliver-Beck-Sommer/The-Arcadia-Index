@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
       <WideContent landmark="Banner">
-        <div className={styles.home_banner_container}>
+        {/* <div className={styles.home_banner_container}>
           <div className={styles.home_banner_container__content}>
             <div className={styles.home_banner_container__content__text_box}>
               <p
@@ -68,7 +68,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </WideContent>
     </>
   );

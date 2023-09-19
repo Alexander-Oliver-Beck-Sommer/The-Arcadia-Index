@@ -12,6 +12,9 @@ body {
   background-color: $black;
   color: $white;
   font-family: $font_franklin;
+  background-image: url("../public/images/backgrounds/dark-repeating-background.png");
+  background-repeat: repeat;
+  background-size: 15%;
 }
 
 button {
